@@ -1,6 +1,9 @@
 package com.codegym.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,10 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Wallet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long account_id;
     private Long amount;
 
-    @OneToOne(mappedBy = "wallet")
+    @OneToOne
+    @JoinColumn(name = "account_id")
     private Account account;
 }
