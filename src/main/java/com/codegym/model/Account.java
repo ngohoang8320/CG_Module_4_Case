@@ -25,8 +25,7 @@ public class Account {
     private String email;
     private String gender;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "wallet_id")
+    @OneToOne(mappedBy = "account")//(cascade = CascadeType.REMOVE)
     private Wallet wallet;
 
     @OneToMany(mappedBy = "account")
@@ -34,4 +33,10 @@ public class Account {
 
     @ManyToMany(mappedBy = "accounts")
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "account")
+    private List<CartItem> cartItems;
+
+    @OneToMany(mappedBy = "account")
+    private List<OrderedItem> orderedItems;
 }
