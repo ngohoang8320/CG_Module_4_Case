@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/landPageStyle.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/landing-page-header-style.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/auth-footer-style.css}" type="text/css">
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}"
+          type="text/css">
+</head>
+
+<body>
+
+<div th:insert="layout/landing-page-header :: header"></div>
+
+<main class="d-flex justify-content-center">
+    <div class="container main-container">
+        <div class="categories-list-container">
+            <div class="categories-label"><span>CATEGORY</span></div>
+            <div class="category-list d-flex flex-column align-content-start flex-wrap">
+                <a class="category-items d-flex align-items-center" th:href="@{#}">
+                    <img alt=""
+                         class="categories-item-image"
+                         th:src="@{https://down-vn.img.susercontent.com/file/687f3967b7c2fe6a134a2c11894eea4b_tn}">
+                    <span>Men's Fashion</span>
+                </a>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Women's Fashion</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Phones & Accessories</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Mother & Baby</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Electronic device</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Home & Life</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Online Bookstore</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Health</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Women's shoes</span>
+                    </a>
+                </div>
+                <div class="category-items">
+                    <a>
+                        <img alt="" src="">
+                        <span>Department Store Online</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header d-flex justify-content-center align-items-center">
+            <span>TODAY'S SUGGESTION</span>
+        </div>
+
+        <div class="list-product-container row justify-content-between" th:each="product : ${products}">
+            <div class="product-container col-2 d-flex flex-column align-items-center">
+                <img alt="" th:src="${product.getImage()}">
+                <div class="product-mini-infor d-flex flex-column justify-content-around">
+                    <div class="product-name">
+                        Bút Bi Nước Mực Gel Đen Xanh Đỏ Khô Nhanh Ngòi 0.5mm, Mực Đều, Nét Chữ Đẹp Đủ Màu - Trạm
+                        Sinh Viên.
+                    </div>
+                    <div class=discount-place>
+
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="product-price">
+                            Price
+                        </div>
+                        <div class="product-sold">
+                            Sold
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-2 product-container">
+                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
+            </div>
+            <div class="col-2 product-container">
+                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
+            </div>
+            <div class="col-2 product-container">
+                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
+            </div>
+            <div class="col-2 product-container">
+                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
+            </div>
+            <div class="col-2 product-container">
+                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
+            </div>
+            <div class="col-2 product-container">
+                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
+            </div>
+        </div>
+
+        <div class="see-more d-flex justify-content-center">
+            <button class="see-more-btn"><span>See More</span></button>
+        </div>
+    </div>
+</main>
+
+<div th:insert="layout/auth-footer :: footer"></div>
+</body>
+
+</html>
