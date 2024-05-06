@@ -95,6 +95,7 @@ body {
 
 .product-sold {
     color: #5f5f5f;
+
 }
 
 .see-more {
@@ -115,4 +116,15 @@ body {
 
 .categories-item-image {
     width: 50%;
+}
+
+.product-detail {
+    color: black;
+    text-decoration: unset;
+}
+
+.product-container:hover {
+    box-shadow: 0 .0625rem 20px 0 rgba(0, 0, 0, .07);
+    transform: translateY(-.0625rem);
+    z-index: 1;
 }

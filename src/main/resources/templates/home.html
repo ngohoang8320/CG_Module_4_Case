@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/landPageStyle.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/landing-page-header-style.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/home.css}" type="text/css">
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}"
+          type="text/css">
+
+</head>
+<body>
+<div th:insert="layout/landing-page-header :: header"></div>
+
+<div class="pro-container">
+    <div class="left-container">
+        <form action="sort" th:each="t : ${typeList}">
+            <button name="type" th:text="${t}" th:value="${t}"></button>
+        </form>
+    </div>
+    <div class="center-container">
+        <div id="product" th:each="product : ${productList}">
+            <a class="product-detail" th:href="@{/product(proId=${product.id}) }">
+                <img id="proImage" th:src="${product.image}">
+                <div id="proName" th:text="${product.name}"></div>
+                <div id="proPrice" th:text="'$' + ${product.price} "></div>
+                <div id="proQuantity">
+                    <span>Avaiable</span>
+                <span th:text="${product.quantity}"></span>
+                </div>
+                <div id="proDescription" th:text="${product.description}"></div>
+            </a>
+        </div>
+        </th:each>
+    </div>
+
+    <div class="right-container">
+        <img src="/img/gifmaker_me.gif" alt="gif">
+    </div>
+    </div>
+
+</body>
+</html>

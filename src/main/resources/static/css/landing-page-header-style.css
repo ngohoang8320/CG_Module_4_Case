@@ -76,7 +76,11 @@ span a {
 .logo {
     height: 50px;
     width: 162px;
-    background-color: #fff;
+    background-color: transparent;
+}
+
+.logo img {
+    height: 100%;
 }
 
 .search-container {

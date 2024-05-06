@@ -37,4 +37,18 @@ public class Product {
 
     @OneToMany(mappedBy = "product")
     private List<OrderedItem> orderedItems;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", price=" + price +
+                ", type='" + type + '\'' +
+                ", quantity=" + quantity +
+                ", description='" + description + '\'' +
+                ", account=" + account +
+                '}';
+    }
 }
