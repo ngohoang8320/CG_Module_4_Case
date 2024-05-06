@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Log In</title>
+    <title>Register</title>
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{css/auth-header-style.css}">
     <link rel="stylesheet" th:href="@{css/auth-footer-style.css}">
@@ -12,21 +12,22 @@
 
 </head>
 <body>
-<div th:insert="layout/auth-header :: signin"></div>
+<div th:insert="layout/auth-header :: signup"></div>
 
 <main class="sign-main-container">
     <div class="sign-main-background d-flex align-items-center">
         <div class="sign-up-form-container d-flex justify-content-center align-items-center">
-            <form action="/login" method="post">
+            <form action="/register" method="post" th:object="${account}">
                 <p>
-                    Log In
+                    Register
                 </p>
-                <input class="username-input" name="username" placeholder="Username" type="text">
-                <input class="password-input" name="password" placeholder="Password" type="password">
-                <button type="submit">Log In</button>
-                <div class="mt-2" style="text-align: center">New to our shop?<a class="ms-1"
-                                                                                style="color: #ee4d2d; text-decoration: none"
-                                                                                th:href="@{/register}">Register</a>
+                <input class="username-input" placeholder="Username" th:field="*{username}" type="text">
+                <input class="password-input" placeholder="Password" th:field="*{password}" type="password">
+                <button type="submit">Register</button>
+                <div class="mt-2" style="text-align: center">Do you already have an account?<a class="ms-1"
+                                                                                               style="color: #ee4d2d; text-decoration: none"
+                                                                                               th:href="@{/login}">Log
+                    in</a>
                 </div>
             </form>
         </div>
