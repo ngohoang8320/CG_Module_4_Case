@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
 
 //@Builder
 @Data
@@ -18,7 +17,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String userName;
+    private String username;
     private String password;
     private LocalDate birth;
     private String phoneNumber;
@@ -28,15 +27,16 @@ public class Account {
     @OneToOne(mappedBy = "account")//(cascade = CascadeType.REMOVE)
     private Wallet wallet;
 
-    @OneToMany(mappedBy = "account")
-    private List<Product> products;
+//    @OneToMany(mappedBy = "account")
+//    private List<Product> products;
 
-    @ManyToMany(mappedBy = "accounts")
-    private List<Role> roles;
+    /*@ManyToMany(mappedBy = "accounts",
+            fetch = FetchType.EAGER)
+    private List<Role> roles;*/
 
-    @OneToMany(mappedBy = "account")
-    private List<CartItem> cartItems;
+//    @OneToMany(mappedBy = "account")
+//    private List<CartItem> cartItems;
 
-    @OneToMany(mappedBy = "account")
-    private List<OrderedItem> orderedItems;
+//    @OneToMany(mappedBy = "account")
+//    private List<OrderedItem> orderedItems;
 }
