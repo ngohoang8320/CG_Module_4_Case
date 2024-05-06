@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CgECommercePlatformApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(CgECommercePlatformApplication.class,
                 args);
     }

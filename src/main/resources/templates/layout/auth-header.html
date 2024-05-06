@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,11 +9,12 @@
 </head>
 
 <body>
-<header class="signin-header">
+<header class="signin-header" th:fragment="signin">
     <div class="header-container">
         <div class="right-header">
-            <a href="#landingpage">
-                <img alt="Logo" src="#logo">
+            <a th:href="@{/home}">
+                <img alt="Logo" class="logo"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png">
             </a>
             <h2>Log In</h2>
         </div>
@@ -25,11 +25,12 @@
     </div>
 </header>
 
-<header class="signup-header">
+<header class="signup-header" th:fragment="signup">
     <div class="header-container">
         <div class="right-header">
-            <a href="#landingpage">
-                <img alt="Logo" src="#logo">
+            <a th:href="@{/home}">
+                <img alt="Logo" class="logo"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png">
             </a>
             <h2>Register</h2>
         </div>

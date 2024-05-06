@@ -1,60 +1,83 @@
 package com.codegym.configuration;
 
+import com.codegym.secure.CustomAuthenticationSuccessHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfig {
-    /*@Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth->auth
-                .requestMatchers("*").permitAll()
-                .anyRequest().authenticated()
-                .httpBasic)
-    }*/
 
-
-
-
-
-
-
-
-
-
-
-    /*@Autowired
-    private MyUserDetailServiceImpl userDetailService;
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
+    public AuthenticationSuccessHandler authenticationSuccessHandler() {
+        return new CustomAuthenticationSuccessHandler();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(userDetailService)
-                .passwordEncoder(passwordEncoder());
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService);
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf()
-                .disable()
-                .formLogin()
-                .defaultSuccessUrl("/student")
-                .permitAll()
-                .and()
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated();
-    }*/
+                .csrf((csrf) -> csrf.disable())
+                .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/register")
+                        .permitAll()
+                        .requestMatchers("/css/**")
+                        .permitAll()
+                        .requestMatchers("/home")
+                        .permitAll()
+                        .requestMatchers("/admin/**")
+                        .hasRole("ADMIN")
+                        .anyRequest()
+                        .authenticated())
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .usernameParameter("username")
+                        .passwordParameter("password")
+//                        .defaultSuccessUrl()      No need this because we have successHandler
+                        .successHandler(authenticationSuccessHandler())
+                        .permitAll())
+                .logout((logout) -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/home"));
+
+        return http.build();
+    }
+
+    @Bean
+    WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web
+                .debug(true)
+                .ignoring()
+                .requestMatchers("/static/**",
+                        "/layout/**");
+    }
 }

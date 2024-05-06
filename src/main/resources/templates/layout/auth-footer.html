@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Document</title>
-    <link rel="stylesheet" th:href="@{../../static/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{../../static/css/auth-footer-style.css}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/auth-footer-style.css}">
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}">
 </head>
 
 <body>
-<footer th:fragment="footer">
+<footer class="d-flex flex-column align-items-center mt-3" style="border-top: 1px solid rgba(0, 0, 0, 0.2)"
+        th:fragment="footer">
     <div class="d-flex justify-content-center">
         <div class="top-footer-container container row d-flex justify-content-between">
             <ul class="top-footer-item col-2">
-                <li class="title-item" th:text="CUSTOMER CARE">CUSTOMER CARE</li>
+                <li class="title-item" th:text="'CUSTOMER CARE'"></li>
                 <li><a href="#">Help Center</a></li>
                 <li><a href="#">Our Blog</a></li>
                 <li><a href="#">Our Mall</a></li>

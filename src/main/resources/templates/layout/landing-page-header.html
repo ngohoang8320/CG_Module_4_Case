@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -30,10 +31,18 @@
                 <span class="top-right-items"><i class="fa-regular fa-circle-question"></i><a
                         href="#">Support</a></span>
                 <span class="top-right-items"><i class="fa-solid fa-globe"></i><a href="#">Language</a></span>
-                <span>
-                        <span class="top-right-items log-btn"><a href="">Register</a></span>
-                        <span class="top-right-items log-btn btn-login"><a href="">Log in</a></span>
-                    </span>
+                <span sec:authorize="!isAuthenticated()">
+                        <span class="top-right-items log-btn"><a th:href="@{/register}">Register</a></span>
+                        <span class="top-right-items log-btn btn-login"><a th:href="@{/login}">Log in</a></span>
+                </span>
+
+                <span sec:authorize="isAuthenticated()">
+                        <span class="top-right-items log-btn"><a href="" th:text="${session.currentAccount}"></a></span>
+                        <span class="top-right-items log-btn btn-login"><a th:href="@{/logout}">Log out</a></span>
+
+                    <!--<span class="top-right-items log-btn"><a href=""
+                                                             sec:authentication="principal.username"></a></span>-->
+                </span>
             </div>
         </div>
     </div>
