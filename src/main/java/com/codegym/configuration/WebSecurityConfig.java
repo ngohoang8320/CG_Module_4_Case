@@ -21,8 +21,22 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @EnableMethodSecurity
 public class WebSecurityConfig {
 
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+    /*@Autowired
+    private MyUserDetailServiceImpl userDetailService;
+=======
     @Autowired
     private UserDetailsService userDetailsService;
+>>>>>>> f9cde9896b97c41b1d860eb5895c388408c47801
 
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler() {

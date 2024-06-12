@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" type="text/css">
     <link rel="stylesheet" th:href="@{css/landPageStyle.css}" type="text/css">
     <link rel="stylesheet" th:href="@{css/landing-page-header-style.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{css/auth-footer-style.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{css/auth-footer-style.css}" type="text/css">
 
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}"
           type="text/css">
@@ -23,122 +23,136 @@
         <div class="categories-list-container">
             <div class="categories-label"><span>CATEGORY</span></div>
             <div class="category-list d-flex flex-column align-content-start flex-wrap">
-                <a class="category-items d-flex align-items-center" th:href="@{#}">
+                <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Men Fashion')}">
                     <img alt=""
                          class="categories-item-image"
                          th:src="@{https://down-vn.img.susercontent.com/file/687f3967b7c2fe6a134a2c11894eea4b_tn}">
                     <span>Men's Fashion</span>
                 </a>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Women Fashion')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/75ea42f9eca124e9cb3cde744c060e4d_tn}">
                         <span>Women's Fashion</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Phones & Accessories')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/31234a27876fb89cd522d7e3db1ba5ca_tn}">
                         <span>Phones & Accessories</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Mother & Baby')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/099edde1ab31df35bc255912bab54a5e_tn}">
                         <span>Mother & Baby</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Electronic device')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/978b9e4cb61c611aaaf58664fae133c5_tn}">
                         <span>Electronic device</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Home & Life')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/24b194a695ea59d384768b7b471d563f_tn}">
                         <span>Home & Life</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Online Bookstore')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/36013311815c55d303b0e6c62d6a8139_tn}">
                         <span>Online Bookstore</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Health')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/49119e891a44fa135f5f6f5fd4cfc747_tn}">
                         <span>Health</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Women shoes')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/48630b7c76a7b62bc070c9e227097847_tn}">
                         <span>Women's shoes</span>
                     </a>
-                </div>
-                <div class="category-items">
-                    <a>
-                        <img alt="" src="">
+<!--                </div>-->
+<!--                <div class="category-items">-->
+                    <a class="category-items d-flex align-items-center" th:href="@{/sort(type='Department Store Online')}">
+                        <img alt=""
+                             class="categories-item-image"
+                             th:src="@{https://down-vn.img.susercontent.com/file/c432168ee788f903f1ea024487f2c889_tn}">
                         <span>Department Store Online</span>
                     </a>
-                </div>
+<!--                </div>-->
             </div>
         </div>
 
         <div class="main-header d-flex justify-content-center align-items-center">
             <span>TODAY'S SUGGESTION</span>
         </div>
-
-        <div class="list-product-container row justify-content-between" th:each="product : ${products}">
-            <div class="product-container col-2 d-flex flex-column align-items-center">
-                <img alt="" th:src="${product.getImage()}">
-                <div class="product-mini-infor d-flex flex-column justify-content-around">
-                    <div class="product-name">
-                        Bút Bi Nước Mực Gel Đen Xanh Đỏ Khô Nhanh Ngòi 0.5mm, Mực Đều, Nét Chữ Đẹp Đủ Màu - Trạm
-                        Sinh Viên.
-                    </div>
-                    <div class=discount-place>
-
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="product-price">
-                            Price
+        <div class="list-product-container row justify-content-between" th:each="product : ${productListByType}">
+            <div class="product-container col-2 d-flex flex-column align-items-center" th:each="p : ${product}">
+                <div class="col-2 product-container">
+                    <a class="product-detail" th:href="@{/product(proId=${p.id}) }">
+                        <img alt="" th:src="${p.getImage()}" style="width: 200px; height: 200px ">
+                        <div class="product-mini-infor d-flex flex-column justify-content-around">
+                            <div class="product-name" th:text="${p.getName()}">
+                            </div>
+                            <div class=discount-place>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="product-price" th:text="'$' + ${p.getPrice()}">
+                                </div>
+                                <div class="product-sold" th:text="${p.getQuantity() + ' avaiable'}">
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-sold">
-                            Sold
-                        </div>
-                    </div>
-
+                    </a>
                 </div>
             </div>
-            <div class="col-2 product-container">
-                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
-            </div>
-            <div class="col-2 product-container">
-                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
-            </div>
-            <div class="col-2 product-container">
-                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
-            </div>
-            <div class="col-2 product-container">
-                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
-            </div>
-            <div class="col-2 product-container">
-                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
-            </div>
-            <div class="col-2 product-container">
-                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">
-            </div>
+            <!--            <div class="col-2 product-container">-->
+            <!--                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">-->
+            <!--            </div>-->
+            <!--            <div class="col-2 product-container">-->
+            <!--                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">-->
+            <!--            </div>-->
+            <!--            <div class="col-2 product-container">-->
+            <!--                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">-->
+            <!--            </div>-->
+            <!--            <div class="col-2 product-container">-->
+            <!--                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">-->
+            <!--            </div>-->
+            <!--            <div class="col-2 product-container">-->
+            <!--                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">-->
+            <!--            </div>-->
+            <!--            <div class="col-2 product-container">-->
+            <!--                <img alt="" src="https://down-vn.img.susercontent.com/file/sg-11134301-7rcca-lsik890havxm32_tn">-->
+            <!--            </div>-->
         </div>
-
         <div class="see-more d-flex justify-content-center">
             <button class="see-more-btn"><span>See More</span></button>
         </div>
     </div>
 </main>
 
-<div th:insert="layout/auth-footer :: footer"></div>
+<div th:insert="layout/auth-footer.html :: footer"></div>
 </body>
 
 </html>

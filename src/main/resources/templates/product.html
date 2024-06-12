@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/landPageStyle.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/landing-page-header-style.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/home.css}" type="text/css">
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css}"
+          type="text/css">
+</head>
+<body>
+<body>
+<div th:insert="layout/landing-page-header :: header"></div>
+<div class="product-address">
+    <a class="product-address-link" href="/">Home</a>
+    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/966fbe37fe1c72e3f2dd.svg">
+    <a class="product-address-link" th:href="@{/sort(type=${product.type})}" th:text="${product.type}">
+    </a>
+    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/966fbe37fe1c72e3f2dd.svg">
+    <a th:text="${product.name}"></a>
+</div>
+<div class="pro-container">
+    <div class="left-container">
+        <form action="sort" th:each="t : ${typeList}">
+            <button  name="type" th:text="${t}" th:value="${t}"></button>
+        </form>
+    </div>
+    <div class="center-container">
+        <div id="product">
+            <img id="proImage" th:src="${product.image}">
+            <div id="proName" th:text="${product.name}"></div>
+            <div id="proPrice" th:text="'$' + ${product.price} "></div>
+            <div>
+                <span>Avaiable </span>
+            <span id="proQuantity" th:text="${product.quantity}"></span>
+            </div>
+            <div id="proDescription" th:text="${product.description}"></div>
+        </div>
+    </div>
+    </th:each>
+    <div class="right-container">
+        <img src="/img/gifmaker_me.gif" alt="gif">
+    </div>
+</div>
+</body>
+</body>
+</html>
